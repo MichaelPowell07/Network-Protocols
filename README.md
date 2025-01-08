@@ -82,11 +82,23 @@ Create a Windows 10 Virtual Machine
     5.) Retrieve the private IP address of the UBUNTU VM and attempt to ping it from the Windows10 VM
     - Open command prompt or powershell and run ping <Ubuntu vm private IP>
     - Observe the ping requests and replies in Wireshark
-    6.) From the Windows10 VM ping a public website (e.g., www.google.com) and observe ICMP traffic in Wireshark
+    6.) From the Windows10 VM ping a public website (e.g., www.disney.com) and observe ICMP traffic in Wireshark
 
-      
+     ![image](https://github.com/user-attachments/assets/6b950b8e-1c5a-4604-ad3e-9b87cd0ddafd)
+ 
+![image](https://github.com/user-attachments/assets/034f56f6-7a57-4847-b74f-a9685d786223)
 
+Part 3: Configure a Firewall (Network Security Group)
 
+1. Initiate a continuous ping from your Windows10 VM to the unbuntu VM
+2. Open the Network security Group associated with the unbuntu VM
+3. Disable inbound ICMP traffic in the Network Security Group
+4. Observe the ICMP traffic in Wireshark and the command line ping should stop
+5. Re-enable ICMP traffic in the Network Security Group
+6. Observe the ICMP traffic in Wireshark and the command line ping should resume
+7. Stop the ping activity
+
+   
 
 
 
