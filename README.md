@@ -88,6 +88,7 @@ Create a Windows 10 Virtual Machine
  
 ![image](https://github.com/user-attachments/assets/034f56f6-7a57-4847-b74f-a9685d786223)
 
+
 Part 3: Configure a Firewall (Network Security Group)
 
 1. Initiate a continuous ping from your Windows10 VM to the unbuntu VM
@@ -98,18 +99,45 @@ Part 3: Configure a Firewall (Network Security Group)
 6. Observe the ICMP traffic in Wireshark and the command line ping should resume
 7. Stop the ping activity
 
-   
+   Observe SSH Traffic 
+
+1. In Wireshark start a new packet capture and filter for SSH traffic
+2. From the Windows10 VM, SSH into the Unbuntu VM
+   -Command: SSH <Username>@<Unbuntu VM Private IP
+   - Enter the Password when prompted
+3. Type commands within the SSH session and observe the SSH traffic in Wireshark
+4. Exit the SSH session: EXIT
+
+ ![image](https://github.com/user-attachments/assets/d8486176-b867-40d9-b960-4c66a4a2777d)
+
+ ![image](https://github.com/user-attachments/assets/b5979e07-4a9b-4086-b668-aff91c146855)
+
+ Observe DHCP Traffic
+
+ 1. In Wireshark filter for DHCP traffic
+ 2. From the Windows10 VM issue a new IP address
+    -Open PowerShell as admin and run: ipconfig/renew
+ 3. Observe the DHCP traffic in Wireshark
+
+    ![image](https://github.com/user-attachments/assets/94ecd319-3a78-4673-98bf-c82a60a933bc)
+
+Observe DNS Traffic
+
+1. In Wireshark filter for DNS traffic
+2. From the Windows10 VM use nslookup to find the IP addresses for websites
+   - example : nslookup disney.com, nslookup google.com
+3. Observe the DNS traffic in Wireshark
+
+![image](https://github.com/user-attachments/assets/07d119e0-c21c-44dc-9ff7-75bbdf303d59)
+
+Observe RDP Traffic 
+
+1. In Wireshark filter for RDP traffic
+   - Use the filter: tcp.port==3389
+2. Observe the continuous RDP traffic between the Windows 10 VM and your local machine
+  
+![image](https://github.com/user-attachments/assets/f733a194-edc6-452e-bd94-9257f66cce73)
 
 
+  
 
-
-
-
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
